@@ -1,0 +1,41 @@
+{
+  "name": "webpack4.x_mutipages_h5",
+  "version": "1.0.0",
+  "description": "webpack4.x h5多页面生成器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server  --config webpack_conf/webpack.dev.conf.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack_conf/webpack.prod.conf.js",
+    "server": "live-server ./ --port=8888"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huxinmin/webpack4.x_mutipages_h5.git"
+  },
+  "author": "huxinmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huxinmin/webpack4.x_mutipages_h5/issues"
+  },
+  "homepage": "https://github.com/huxinmin/webpack4.x_mutipages_h5#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "main.css": "^2.0.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^7.0.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.4",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.1.3",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
