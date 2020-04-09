@@ -18,9 +18,9 @@ const rules = [{
   },
   {
     test: /\.js$/,
-    use: ["babel-loader"],
+    use: ["babel-loader", "eslint-loader"],
     // 不检查node_modules下的js文件
-    // exclude: "/node_modules/"
+    exclude: "/node_modules/"
   }, {
     test: /\.(png|jpg|gif)$/,
     use: [{

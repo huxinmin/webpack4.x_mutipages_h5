@@ -18,11 +18,14 @@ let getHtmlConfig = function (name, chunks) {
     inject: true,
     hash: true, //开启hash  ?[hash]
     chunks: chunks,
-    minify: process.env.NODE_ENV === "development" ? false : {
-      removeComments: true, //移除HTML中的注释
-      collapseWhitespace: true, //折叠空白区域 也就是压缩代码
-      removeAttributeQuotes: true, //去除属性引用
-    },
+    // 不知道为什么这样写会报错
+    // 报错信息为 Error: html-webpack-plugin could not minify the generated output.
+    // minify: process.env.NODE_ENV === "development" ? false : {
+    //   removeComments: true, //移除HTML中的注释
+    //   collapseWhitespace: true, //折叠空白区域 也就是压缩代码
+    //   removeAttributeQuotes: true, //去除属性引用
+    // },
+    minify: process.env.NODE_ENV === "development" ? false : false
   };
 };
 

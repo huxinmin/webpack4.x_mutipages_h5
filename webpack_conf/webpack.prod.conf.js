@@ -2,9 +2,9 @@ const path = require('path');
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 // 清除目录等
-const cleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 //4.x之后用以压缩
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 //4.x之后提取css
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -21,7 +21,7 @@ const webpackConfigProd = {
   devtool: 'none',
   plugins: [
     //删除dist目录
-    new cleanWebpackPlugin({
+    new CleanWebpackPlugin ({
       // verbose Write logs to console.
       verbose: false, //开启在控制台输出信息
       // dry Use boolean "true" to test/emulate delete. (will not remove files).
@@ -37,23 +37,19 @@ const webpackConfigProd = {
       cssProcessorOptions: {
         safe: true
       }
-    }),
-    //上线压缩 去除console等信息webpack4.x之后去除了webpack.optimize.UglifyJsPlugin
-    //https://github.com/mishoo/UglifyJS2/tree/harmony#compress-options
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        compress: {
-          warnings: false,
-          drop_debugger: false,
-          drop_console: true
-        }
-      }
     })
   ],
   module: {
     rules: []
   },
-
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: true,
+      }),
+    ],
+  }
 }
 
 if(process.env.npm_config_report){//打包后模块大小分析//npm run build --report
