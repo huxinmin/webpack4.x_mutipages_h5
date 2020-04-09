@@ -19,6 +19,7 @@ module.exports = {
     'module': true,
     'jQuery': true,
     'require': true,
-    '$': true
+    '$': true,
+    'layui': true
   }
 };

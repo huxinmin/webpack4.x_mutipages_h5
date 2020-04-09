@@ -20,12 +20,9 @@
     "url": "https://github.com/huxinmin/webpack4.x_mutipages_h5/issues"
   },
   "homepage": "https://github.com/huxinmin/webpack4.x_mutipages_h5#readme",
-  "dependencies": {
-    "jquery": "^3.4.1",
-    "main.css": "^2.0.0",
-    "normalize.css": "^8.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@arcgis/webpack-plugin": "^4.14.2",
     "@babel/core": "^7.9.0",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
