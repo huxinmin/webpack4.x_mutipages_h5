@@ -8,7 +8,6 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 //静态资源输出
 const copyWebpackPlugin = require("copy-webpack-plugin");
 const rules = require("./webpack.rules.conf.js");
-const ArcGISPlugin = require("@arcgis/webpack-plugin");
 // 获取html-webpack-plugin参数的方法
 let getHtmlConfig = function (name, chunks) {
   return {
@@ -53,20 +52,12 @@ module.exports = {
   },
   //将外部变量或者模块加载进来
   externals: {
-    // 'jquery': 'window.jQuery'
+    jquery: 'window.jQuery',
   },
   plugins: [
     // 全局暴露统一入口
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      'window.jQuery': 'jquery',
-    }),
-    // arcGis配置
-    new ArcGISPlugin({
-      features: {
-        "3d": false
-      }
+      $: "jquery"
     }),
     //静态资源输出
     new copyWebpackPlugin([{
@@ -80,11 +71,6 @@ module.exports = {
     }),
 
   ],
-  node: {
-    process: false,
-    global: false,
-    fs: 'empty',
-  }
   // webpack4里面移除了commonChunksPulgin插件，放在了config.optimization里面,提取js， vendor名字可改
   // optimization: {
   //  splitChunks: {
