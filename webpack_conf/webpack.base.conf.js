@@ -33,7 +33,7 @@ let getHtmlConfig = function (name, chunks) {
 function getEntry(PAGES_DIR) {
   var entry = {};
   //读取src目录所有page入口
-  glob.sync(PAGES_DIR + '**/*.js').forEach(function (name) {
+  glob.sync(PAGES_DIR + '**/index.js').forEach(function (name) {
     var start = name.indexOf('pages/') + 4;
     var end = name.length - 3;
     var eArr = [];
