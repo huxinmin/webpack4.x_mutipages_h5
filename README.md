@@ -12,6 +12,7 @@ webpack4.x版本多页面多入口H5页面生成器
 * Webpack 对项目进行打包，编译，自动化，压缩，热更新等
 * Sass css的预编译器
 * Postcss  JavaScript 工具和插件转换 CSS 代码的工具
+* Axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中
 
 ## 安装
 环境安装，安装Nodejs和Git后，然后安装NPM镜像CNPM

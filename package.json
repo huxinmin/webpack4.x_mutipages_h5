@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/huxinmin/webpack4.x_mutipages_h5#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "esri-loader": "^2.14.0"
   },
   "devDependencies": {
