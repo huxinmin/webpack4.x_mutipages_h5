@@ -14,7 +14,7 @@ let getHtmlConfig = function (name, chunks) {
     template: `./src/pages/${name}/index.html`,
     filename: `${name}.html`,
     // favicon: './favicon.ico',
-    // title: title,
+    // title: '33',
     inject: true,
     hash: true, //开启hash  ?[hash]
     chunks: chunks,
@@ -25,7 +25,7 @@ let getHtmlConfig = function (name, chunks) {
     //   collapseWhitespace: true, //折叠空白区域 也就是压缩代码
     //   removeAttributeQuotes: true, //去除属性引用
     // },
-    minify: process.env.NODE_ENV === "development" ? false : false
+    minify: process.env.NODE_ENV === "development" ? false : false,
   };
 };
 
