@@ -29,7 +29,10 @@ const rules = [{
       options: {
         limit: 5 * 1024, //小于这个时将会已base64位图片打包处理
         // 图片文件输出的文件夹
-        outputPath: "images"
+        outputPath: "images",
+        //但是webpack4.x里会和html-webpack-plugin产生冲突；
+        //原因是file-loader升级了，以前4.2的时候是没事的，现在file-loader升级到5.0了，所以需要在file-loader的options里使用一个配置：
+        esModule:false
       }
     }]
   },
