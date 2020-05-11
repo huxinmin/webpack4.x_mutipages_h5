@@ -21,7 +21,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 下载源代码：
 ```js
-git clone https://github.com/huxinmin/webpack4.x_mutipages_h5.git
+git clone https://github.com/huxinmin/webpack4.x_mutipages_h5.git --depth=1
 ```
 解压后进入刚才下载的项目根目录执行命令：
 ```sh
