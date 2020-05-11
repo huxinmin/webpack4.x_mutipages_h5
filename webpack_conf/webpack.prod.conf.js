@@ -3,6 +3,8 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 // 清除目录等
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+//复制一些本地的第三方库到dist下面
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 //4.x之后用以压缩
 const TerserPlugin = require('terser-webpack-plugin');
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
@@ -37,7 +39,13 @@ const webpackConfigProd = {
       cssProcessorOptions: {
         safe: true
       }
-    })
+    }),
+    //复制assets目录到dist下面
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, "../src/assets"),
+      to: './assets',
+      ignore: ['.*']
+    }]),
   ],
   module: {
     rules: []

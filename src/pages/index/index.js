@@ -1,7 +1,6 @@
-import './index.scss';
+import './index.less';
 import './arcgis';
-
-let tabUI = require('../../lib/tab');
+import tabUI from '../../lib/tab';
 
 console.log('121');
 tabUI.init();

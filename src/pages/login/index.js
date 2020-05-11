@@ -1,3 +1,3 @@
-import './index.scss';
+import './index.less';
 console.log('login');
 alert();

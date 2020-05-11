@@ -6,7 +6,7 @@ const purifyCssWebpack = require("purifycss-webpack");
 // html模板
 const htmlWebpackPlugin = require("html-webpack-plugin");
 //静态资源输出
-const copyWebpackPlugin = require("copy-webpack-plugin");
+// const copyWebpackPlugin = require("copy-webpack-plugin");
 const rules = require("./webpack.rules.conf.js");
 // 获取html-webpack-plugin参数的方法
 let getHtmlConfig = function (name, chunks) {
@@ -53,6 +53,7 @@ module.exports = {
   //将外部变量或者模块加载进来
   externals: {
     jquery: 'window.jQuery',
+    layui: 'window.layui',
   },
   plugins: [
     // 全局暴露统一入口
@@ -60,11 +61,12 @@ module.exports = {
       $: "jquery"
     }),
     //静态资源输出
-    new copyWebpackPlugin([{
-      from: path.resolve(__dirname, "../src/assets"),
-      to: './assets',
-      ignore: ['.*']
-    }]),
+    //移动到prod.conf.js里面进行了
+    // new copyWebpackPlugin([{
+    //   from: path.resolve(__dirname, "../src/assets"),
+    //   to: './assets',
+    //   ignore: ['.*']
+    // }]),
     // 消除冗余的css代码
     new purifyCssWebpack({
       paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
