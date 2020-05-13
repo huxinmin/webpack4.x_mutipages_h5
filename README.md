@@ -15,6 +15,9 @@ webpack4.x版本多页面多入口H5页面生成器
 * Axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中
 * Mockjs 生成随机数据，拦截 Ajax 请求
 * json-server 一个在前端本地运行，可以存储json数据的server
+* js-cookie一个简单轻量的浏览器cookie操作库
+* jQuery-File-Upload一个经典好用的jquery上传插件库
+* echarts百度的图标插件
 
 ## 安装
 环境安装，安装Nodejs和Git后，然后安装NPM镜像CNPM
@@ -43,7 +46,7 @@ cpm i
 * .gitignore 忽略一些git上传目录和文件
 * package.json 项目包依赖以及一些脚本配置等
 * postcss.config.js postcss的配置文件
-* server自己写的一些mock假数据，用于不依赖后端自己开发数据
+* server自己写的一些mock假数据，遵循restful接口规范，用于不依赖后端自己开发数据
 
 
 ## 使用
